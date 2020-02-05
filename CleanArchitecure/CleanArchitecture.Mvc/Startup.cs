@@ -12,6 +12,7 @@ using CleanArchitecture.Mvc.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using CleanArchitecture.Infra.Data.Context;
 
 namespace CleanArchitecture.Mvc
 {
@@ -32,6 +33,12 @@ namespace CleanArchitecture.Mvc
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddDbContext<UniversityDBContext>(options =>
+            {
+                options.UseSqlite(Configuration.GetConnectionString("UniversityConnectionString"));
+            });
+
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

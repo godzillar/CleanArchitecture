@@ -351,3 +351,6 @@ MigrationBackup/
 
 # Project specific ignores
 /CleanArchitecure/CleanArchitecture.Mvc/UniversityIdentityDb.db
+/CleanArchitecure/CleanArchitecture.Mvc/UniversityDb.db-wal
+/CleanArchitecure/CleanArchitecture.Mvc/UniversityDb.db-shm
+/CleanArchitecure/CleanArchitecture.Mvc/UniversityDb.db
